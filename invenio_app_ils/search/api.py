@@ -95,3 +95,13 @@ class InternalLocationSearch(RecordsSearch):
             search = search.filter("terms", state=exclude_states)
 
         return search
+
+
+class UsersSearch(RecordsSearch):
+    """."""
+
+    class Meta:
+        """Search only on items index."""
+
+        index = "users"
+        doc_types = None

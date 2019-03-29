@@ -12,6 +12,7 @@ from __future__ import absolute_import, print_function
 from datetime import datetime
 
 from celery import shared_task
+import elasticsearch
 from flask import current_app
 from invenio_circulation.api import Loan
 from invenio_circulation.search.api import search_by_pid
@@ -172,3 +173,19 @@ class LocationIndexer(RecordIndexer):
             (location[Location.pid_field],),
             eta=eta
         )
+
+
+class UsersIndexer(RecordIndexer):
+    def _prepare_record(self, record, index, doc_type):
+        """Prepare record data for indexing.
+        :param record: The record to prepare.
+        :param index: The Elasticsearch index.
+        :param doc_type: The Elasticsearch document type.
+        :returns: The record metadata.
+        """
+
+        data = record.dumps()
+        return data
+
+    def record_to_index(self, record):
+        return (record._index, record._doc_type)

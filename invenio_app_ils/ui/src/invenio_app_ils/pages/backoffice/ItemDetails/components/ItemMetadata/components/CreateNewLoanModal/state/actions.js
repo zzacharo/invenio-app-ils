@@ -11,7 +11,7 @@ export const createNewLoanForItem = (itemPid, loan) => {
     const stateUserSession = getState().userSession;
     await loanApi
       .postAction(
-        `${ApiURLS.loans.list}create`,
+        ApiURLS.loans.create,
         itemPid,
         loan,
         stateUserSession.userPid,

@@ -10,9 +10,12 @@
 from __future__ import absolute_import, print_function
 
 from flask import current_app
+from invenio_accounts.models import User
 from invenio_jsonschemas import current_jsonschemas
+from invenio_oauthclient.models import RemoteAccount
 from invenio_pidstore.resolver import Resolver
 from invenio_records.api import Record
+from invenio_userprofiles.api import UserProfile
 
 from invenio_app_ils.errors import DocumentKeywordNotFoundError
 
@@ -188,3 +191,27 @@ class Keyword(IlsRecord):
     def create(cls, data, id_=None, **kwargs):
         """Create Keyword record."""
         return super(Keyword, cls).create(data, id_=id_, **kwargs)
+
+
+class IlsUser():
+
+    _index = "users-user-v1.0.0"
+    _doc_type = "user-v1.0.0"
+
+    def __init__(self, id, revision_id=None):
+        self.user = User.query.filter_by(id=id).one_or_none()
+        self.id = self.user.id if self.user else ''
+        # set revision as it is needed by the indexer but always to the same
+        # value as we dont need it
+        self.revision_id = 1
+        self.profile = UserProfile.get_by_userid(id)
+        self.remote = RemoteAccount.query.filter_by(user_id=id).one_or_none()
+
+    def dumps(self):
+        return dict(
+            id=self.id,
+            name=self.profile.full_name if self.profile else '',
+            email=self.user.email if self.user else '',
+            # TODO: move to overlay
+            ccid=self.remote.extra_data['person_id'] if self.remote else ''
+        )

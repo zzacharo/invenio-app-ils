@@ -16,7 +16,8 @@ from .pids import (  # isort:skip
     INTERNAL_LOCATION_PID_TYPE,
     ITEM_PID_TYPE,
     KEYWORD_PID_TYPE,
-    LOCATION_PID_TYPE
+    LOCATION_PID_TYPE,
+    USER_PID_TYPE
 )
 
 
@@ -55,6 +56,7 @@ def internal_location_pid_fetcher(record_uuid, data):
         pid_value=str(data[InternalLocation.pid_field])
     )
 
+<<<<<<< HEAD
 
 def keyword_pid_fetcher(record_uuid, data):
     """Return Keyword PID fetcher."""
@@ -63,3 +65,12 @@ def keyword_pid_fetcher(record_uuid, data):
         pid_type=KEYWORD_PID_TYPE,
         pid_value=str(data[Keyword.pid_field])
     )
+=======
+def user_pid_fetcher(record_uuid, data):
+    """Dummy user fetcher."""
+    return FetchedPID(
+        provider=None,
+        pid_type=USER_PID_TYPE,
+        pid_value=str(data['id']),
+    )
+>>>>>>> backoffice: add user search page

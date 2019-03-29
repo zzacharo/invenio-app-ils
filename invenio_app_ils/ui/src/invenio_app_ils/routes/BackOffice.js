@@ -12,6 +12,7 @@ import {
   LoanDetailsContainer,
   LocationList,
   UserDetailsContainer,
+  UsersSearch,
 } from '../pages/backoffice';
 import './BackOffice.scss';
 import { Notifications } from '../common/components/Notifications';
@@ -68,7 +69,12 @@ export class BackOffice extends Component {
           {/* patrons */}
           <Route
             exact
-            path={BackOfficeURLS.patronDetails}
+            path={BackOfficeURLS.usersSearch}
+            component={UsersSearch}
+          />
+          <Route
+            exact
+            path={BackOfficeURLS.userDetails}
             component={UserDetailsContainer}
           />
         </div>

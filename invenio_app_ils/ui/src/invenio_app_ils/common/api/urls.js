@@ -3,9 +3,9 @@ export const ApiURLS = {
     loan: '/circulation/loans/:loanPid',
     list: '/circulation/loans/',
     checkout: '/circulation/loans/checkout',
+    create: '/circulation/loans/create',
   },
   items: {},
   documents: {},
   locations: {},
-  users: {},
 };

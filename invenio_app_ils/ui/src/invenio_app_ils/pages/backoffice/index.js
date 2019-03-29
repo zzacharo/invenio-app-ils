@@ -6,5 +6,6 @@ export { DocumentDetailsContainer } from './DocumentDetails';
 export { LoanDetailsContainer } from './LoanDetails';
 export { LoansSearch } from './LoansSearch';
 export { UserDetailsContainer } from './UserDetails';
+export { UsersSearch } from './UsersSearch';
 export { DocumentsSearch } from './DocumentsSearch';
 export { LocationList } from './LocationList';

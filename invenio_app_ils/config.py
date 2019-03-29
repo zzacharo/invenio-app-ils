@@ -21,6 +21,7 @@ from flask import request
 from invenio_app.config import APP_DEFAULT_SECURE_HEADERS
 from invenio_circulation.search.api import LoansSearch
 from invenio_records_rest.facets import terms_filter
+from invenio_records_rest.utils import deny_all, allow_all
 
 from .indexer import DocumentIndexer, ItemIndexer, LoanIndexer, LocationIndexer
 from .jwt import ils_jwt_create_token
@@ -39,6 +40,7 @@ from .search.api import (  # isort:skip
     InternalLocationSearch,
     ItemSearch,
     LocationSearch,
+    UsersSearch
 )
 
 from invenio_circulation.config import (  # isort:skip
@@ -90,6 +92,9 @@ from .pidstore.pids import (  # isort:skip
     LOCATION_PID_FETCHER,
     LOCATION_PID_MINTER,
     LOCATION_PID_TYPE,
+    USER_PID_FETCHER,
+    USER_PID_MINTER,
+    USER_PID_TYPE,
 )
 
 
@@ -394,6 +399,30 @@ RECORDS_REST_ENDPOINTS = dict(
         create_permission_factory_imp=record_create_permission_factory,
         update_permission_factory_imp=record_update_permission_factory,
         delete_permission_factory_imp=record_delete_permission_factory,
+    ),
+    userid=dict(
+        pid_type=USER_PID_TYPE,
+        pid_minter=USER_PID_MINTER,
+        pid_fetcher=USER_PID_FETCHER,
+        search_class=UsersSearch,
+        record_serializers={
+            'application/json': ('invenio_records_rest.serializers'
+                                 ':json_v1_response'),
+        },
+        search_serializers={
+            "application/json": (
+                "invenio_records_rest.serializers:json_v1_search"
+            )
+        },
+        item_route='/users/<pid({}):pid_value>'.format(USER_PID_TYPE),
+        list_route="/users/",
+        default_media_type="application/json",
+        max_result_window=10000,
+        error_handlers=dict(),
+        read_permission_factory_imp=deny_all,
+        create_permission_factory_imp=deny_all,
+        update_permission_factory_imp=deny_all,
+        delete_permission_factory_imp=deny_all,
     ),
 )
 

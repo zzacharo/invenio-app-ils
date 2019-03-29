@@ -13,41 +13,27 @@ import {
   Count,
   SortBy,
   SortOrder,
-  Aggregator,
 } from 'react-searchkit';
 import { apiConfig } from '../../../common/api/base';
 import { BackOfficeURLS } from '../../../common/urls';
 import {
   Error as IlsError,
-  SearchBar as DocumentsSearchBar,
+  SearchBar as UsersSearchBar,
 } from '../../../common/components';
-import { document as documentApi } from '../../../common/api/documents/document';
-import { ClearButton, NewButton } from '../components/buttons';
-import { openRecordEditor } from '../../../common/urls';
-import { ResultsList as DocumentsResultsList } from './components';
+import { ClearButton } from '../components/buttons';
+import { user } from '../../../common/api';
+import { ResultsList as UsersResultsList } from './components';
 import { default as config } from './config';
-import './DocumentsSearch.scss';
+import './UsersSearch.scss';
 
-export class DocumentsSearch extends Component {
+export class UsersSearch extends Component {
   _renderSearchBar = (_, queryString, onInputChange, executeSearch) => {
-    const helperFields = [
-      {
-        name: 'author',
-        field: 'authors.full_name',
-        defaultValue: '"Doe, John"',
-      },
-      {
-        name: 'created',
-        field: '_created',
-      },
-    ];
     return (
-      <DocumentsSearchBar
+      <UsersSearchBar
         currentQueryString={queryString}
         onInputChange={onInputChange}
         executeSearch={executeSearch}
-        placeholder={'Search for documents'}
-        queryHelperFields={helperFields}
+        placeholder={'Search for users'}
       />
     );
   };
@@ -55,11 +41,11 @@ export class DocumentsSearch extends Component {
   _renderResultsList = results => {
     return (
       <div className="results-list">
-        <DocumentsResultsList
+        <UsersResultsList
           results={results}
-          viewDetailsClickHandler={documentPid => {
-            const path = generatePath(BackOfficeURLS.documentDetails, {
-              documentPid: documentPid,
+          viewDetailsClickHandler={userPid => {
+            const path = generatePath(BackOfficeURLS.userDetails, {
+              userPid: userPid,
             });
             this.props.history.push(path);
           }}
@@ -68,21 +54,12 @@ export class DocumentsSearch extends Component {
     );
   };
 
-  _renderAggregations = () => {
-    const components = config.AGGREGATIONS.map(agg => (
-      <div className="aggregator" key={agg.field}>
-        <Aggregator title={agg.title} field={agg.field} />
-      </div>
-    ));
-    return <div className="aggregators">{components}</div>;
-  };
-
   _renderEmptyResults = (queryString, resetQuery) => {
     return (
       <Segment placeholder textAlign="center">
         <Header icon>
           <Icon name="search" />
-          No documents found!
+          No items found!
         </Header>
         <div className="empty-results-current">
           Current search "{queryString}"
@@ -91,12 +68,6 @@ export class DocumentsSearch extends Component {
           <ClearButton
             clickHandler={() => {
               resetQuery();
-            }}
-          />
-          <NewButton
-            text={'New document'}
-            clickHandler={() => {
-              openRecordEditor(documentApi.url);
             }}
           />
         </Segment.Inline>
@@ -162,34 +133,20 @@ export class DocumentsSearch extends Component {
     );
   };
 
-  _renderAggregations = () => {
-    const components = config.AGGREGATIONS.map(agg => (
-      <div className="aggregator" key={agg.field}>
-        <Aggregator title={agg.title} field={agg.field} />
-      </div>
-    ));
-    return <div className="aggregators">{components}</div>;
-  };
-
   render() {
     return (
       <ReactSearchKit
         searchConfig={{
           ...apiConfig,
-          url: documentApi.url,
+          url: user.url, // DONT remove the end '/' from user url
         }}
       >
-        <Container className="documents-search-searchbar">
+        <Container className="users-search-searchbar">
           <SearchBar renderElement={this._renderSearchBar} />
         </Container>
 
-        <Grid
-          columns={2}
-          stackable
-          relaxed
-          className="documents-search-container"
-        >
-          <Grid.Column width={3}>{this._renderAggregations()}</Grid.Column>
+        <Grid columns={2} stackable relaxed className="users-search-container">
+          <Grid.Column width={3} />
           <Grid.Column width={13}>
             <ResultsLoader>
               <EmptyResults renderElement={this._renderEmptyResults} />

@@ -22,7 +22,9 @@ from invenio_pidstore.models import PersistentIdentifier, PIDStatus, \
     RecordIdentifier
 from invenio_search import current_search
 
-from .records.api import Document, InternalLocation, Item, Keyword, Location
+from .indexer import UsersIndexer
+from .records.api import Document, InternalLocation, Item, Keyword, Location, \
+    IlsUser
 
 from .pidstore.pids import (  # isort:skip
     DOCUMENT_PID_TYPE,
@@ -373,3 +375,19 @@ def data(n_docs, n_items, n_loans, n_keywords):
 
     click.secho('Now indexing...', fg='green')
     indexer.process_bulk_queue()
+
+
+@click.group()
+def ils_users():
+    """Users data CLI."""
+
+@ils_users.command()
+@with_appcontext
+def index():
+    """Index users."""
+    from invenio_accounts.models import User
+    users  = User.query.all()
+    indexer = UsersIndexer()
+    for user in users:
+        ils_user = IlsUser(user.id)
+        indexer.index(ils_user)
