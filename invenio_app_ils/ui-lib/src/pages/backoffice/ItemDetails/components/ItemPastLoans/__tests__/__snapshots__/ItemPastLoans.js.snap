@@ -1,0 +1,857 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemPastLoans tests should load the past loans component 1`] = `
+<Loader>
+  <Error>
+    <ResultsTable
+      fixed={false}
+      headerActionClickHandler={null}
+      headerActionComponent={null}
+      name="loans"
+      rowActionClickHandler={[Function]}
+      rows={Array []}
+      seeAllComponent={
+        <SeeAllButton
+          clickHandler={[Function]}
+          disabled={false}
+          fluid={false}
+        />
+      }
+      showMaxRows={5}
+      singleLine={false}
+      subtitle=""
+      title="Loans history"
+    />
+  </Error>
+</Loader>
+`;
+
+exports[`ItemPastLoans tests should render pending loans 1`] = `
+<ItemPastLoans
+  data={
+    Object {
+      "hits": Array [
+        Object {
+          "created": "2018-01-01T10:05:00.000Z",
+          "id": 1,
+          "loan_pid": "loan1",
+          "metadata": Object {
+            "end_date": "2018-01-01T10:05:00.000Z",
+            "loan_pid": "loan1",
+            "patron_pid": "patron_1",
+            "start_date": "2018-01-01T10:05:00.000Z",
+          },
+          "updated": "2018-01-01T10:05:00.000Z",
+        },
+        Object {
+          "created": "2018-01-01T10:05:00.000Z",
+          "id": 2,
+          "loan_pid": "loan2",
+          "metadata": Object {
+            "end_date": "2018-01-01T10:05:00.000Z",
+            "loan_pid": "loan2",
+            "patron_pid": "patron_2",
+            "start_date": "2018-01-01T10:05:00.000Z",
+          },
+          "updated": "2018-01-01T10:05:00.000Z",
+        },
+      ],
+      "total": 2,
+    }
+  }
+  fetchPastLoans={[Function]}
+  item={
+    Object {
+      "item_pid": 222,
+      "metadata": Object {
+        "document_pid": 111,
+        "item_pid": 222,
+      },
+    }
+  }
+  showMaxPastLoans={5}
+>
+  <Loader>
+    <Error>
+      <ResultsTable
+        fixed={false}
+        headerActionClickHandler={null}
+        headerActionComponent={null}
+        name="loans"
+        rowActionClickHandler={[Function]}
+        rows={
+          Array [
+            Object {
+              "Document ID": undefined,
+              "End date": "2018-01-01 10:05",
+              "ID": "loan1",
+              "Patron ID": "patron_1",
+              "Renewals": undefined,
+              "Start date": "2018-01-01 10:05",
+              "State": undefined,
+              "Transaction date": "Invalid DateTime",
+              "Updated": "2018-01-01 10:05",
+            },
+            Object {
+              "Document ID": undefined,
+              "End date": "2018-01-01 10:05",
+              "ID": "loan2",
+              "Patron ID": "patron_2",
+              "Renewals": undefined,
+              "Start date": "2018-01-01 10:05",
+              "State": undefined,
+              "Transaction date": "Invalid DateTime",
+              "Updated": "2018-01-01 10:05",
+            },
+          ]
+        }
+        seeAllComponent={
+          <SeeAllButton
+            clickHandler={[Function]}
+            disabled={false}
+            fluid={false}
+          />
+        }
+        showMaxRows={5}
+        singleLine={false}
+        subtitle=""
+        title="Loans history"
+      >
+        <Segment>
+          <div
+            className="ui segment"
+          >
+            <Grid>
+              <div
+                className="ui grid"
+              >
+                <GridRow>
+                  <div
+                    className="row"
+                  >
+                    <GridColumn
+                      verticalAlign="middle"
+                      width={13}
+                    >
+                      <div
+                        className="middle aligned thirteen wide column"
+                      >
+                        <Header
+                          as="h3"
+                          content="Loans history"
+                          subheader=""
+                        >
+                          <h3
+                            className="ui header"
+                          >
+                            Loans history
+                            <HeaderSubheader
+                              content=""
+                            >
+                              <div
+                                className="sub header"
+                              />
+                            </HeaderSubheader>
+                          </h3>
+                        </Header>
+                      </div>
+                    </GridColumn>
+                    <GridColumn
+                      textAlign="right"
+                      width={3}
+                    >
+                      <div
+                        className="right aligned three wide column"
+                      />
+                    </GridColumn>
+                  </div>
+                </GridRow>
+              </div>
+            </Grid>
+            <Table
+              as="table"
+              selectable={true}
+              striped={true}
+            >
+              <table
+                className="ui selectable striped table"
+              >
+                <ResultsTableHeader
+                  columns={
+                    Array [
+                      "ID",
+                      "Updated",
+                      "Patron ID",
+                      "Document ID",
+                      "State",
+                      "Start date",
+                      "End date",
+                      "Transaction date",
+                      "Renewals",
+                    ]
+                  }
+                  withRowAction={true}
+                >
+                  <TableHeader
+                    as="thead"
+                  >
+                    <thead
+                      className=""
+                    >
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        data-test="header"
+                      >
+                        <tr
+                          className=""
+                          data-test="header"
+                        >
+                          <TableHeaderCell
+                            as="th"
+                            collapsing={true}
+                            width={2}
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                              collapsing={true}
+                              width={2}
+                            >
+                              <th
+                                className="collapsing two wide"
+                              />
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="ID"
+                            width={2}
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                              width={2}
+                            >
+                              <th
+                                className="two wide"
+                              >
+                                ID
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Updated"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Updated
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Patron ID"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Patron ID
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Document ID"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Document ID
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="State"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                State
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Start date"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Start date
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="End date"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                End date
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Transaction date"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Transaction date
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Renewals"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Renewals
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                        </tr>
+                      </TableRow>
+                    </thead>
+                  </TableHeader>
+                </ResultsTableHeader>
+                <ResultsTableBody
+                  columns={
+                    Array [
+                      "ID",
+                      "Updated",
+                      "Patron ID",
+                      "Document ID",
+                      "State",
+                      "Start date",
+                      "End date",
+                      "Transaction date",
+                      "Renewals",
+                    ]
+                  }
+                  rowActionClickHandler={[Function]}
+                  rows={
+                    Array [
+                      Object {
+                        "Document ID": undefined,
+                        "End date": "2018-01-01 10:05",
+                        "ID": "loan1",
+                        "Patron ID": "patron_1",
+                        "Renewals": undefined,
+                        "Start date": "2018-01-01 10:05",
+                        "State": undefined,
+                        "Transaction date": "Invalid DateTime",
+                        "Updated": "2018-01-01 10:05",
+                      },
+                      Object {
+                        "Document ID": undefined,
+                        "End date": "2018-01-01 10:05",
+                        "ID": "loan2",
+                        "Patron ID": "patron_2",
+                        "Renewals": undefined,
+                        "Start date": "2018-01-01 10:05",
+                        "State": undefined,
+                        "Transaction date": "Invalid DateTime",
+                        "Updated": "2018-01-01 10:05",
+                      },
+                    ]
+                  }
+                >
+                  <TableBody
+                    as="tbody"
+                  >
+                    <tbody
+                      className=""
+                    >
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        data-test="loan1"
+                        key="loan1"
+                      >
+                        <tr
+                          className=""
+                          data-test="loan1"
+                        >
+                          <TableCell
+                            as="td"
+                            textAlign="center"
+                          >
+                            <td
+                              className="center aligned"
+                            >
+                              <Button
+                                as="button"
+                                circular={true}
+                                compact={true}
+                                data-test="btn-view-details-loan1"
+                                icon="eye"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="ui circular compact icon button"
+                                  data-test="btn-view-details-loan1"
+                                  onClick={[Function]}
+                                >
+                                  <Icon
+                                    as="i"
+                                    name="eye"
+                                  >
+                                    <i
+                                      aria-hidden="true"
+                                      className="eye icon"
+                                    />
+                                  </Icon>
+                                </button>
+                              </Button>
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="ID-loan1"
+                            key="0-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="ID-loan1"
+                            >
+                              loan1
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Updated-loan1"
+                            key="1-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Updated-loan1"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Patron ID-loan1"
+                            key="2-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Patron ID-loan1"
+                            >
+                              patron_1
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Document ID-loan1"
+                            key="3-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Document ID-loan1"
+                            >
+                              -
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="State-loan1"
+                            key="4-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="State-loan1"
+                            >
+                              -
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Start date-loan1"
+                            key="5-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Start date-loan1"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="End date-loan1"
+                            key="6-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="End date-loan1"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Transaction date-loan1"
+                            key="7-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Transaction date-loan1"
+                            >
+                              Invalid DateTime
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Renewals-loan1"
+                            key="8-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Renewals-loan1"
+                            >
+                              -
+                            </td>
+                          </TableCell>
+                        </tr>
+                      </TableRow>
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        data-test="loan2"
+                        key="loan2"
+                      >
+                        <tr
+                          className=""
+                          data-test="loan2"
+                        >
+                          <TableCell
+                            as="td"
+                            textAlign="center"
+                          >
+                            <td
+                              className="center aligned"
+                            >
+                              <Button
+                                as="button"
+                                circular={true}
+                                compact={true}
+                                data-test="btn-view-details-loan2"
+                                icon="eye"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="ui circular compact icon button"
+                                  data-test="btn-view-details-loan2"
+                                  onClick={[Function]}
+                                >
+                                  <Icon
+                                    as="i"
+                                    name="eye"
+                                  >
+                                    <i
+                                      aria-hidden="true"
+                                      className="eye icon"
+                                    />
+                                  </Icon>
+                                </button>
+                              </Button>
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="ID-loan2"
+                            key="0-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="ID-loan2"
+                            >
+                              loan2
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Updated-loan2"
+                            key="1-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Updated-loan2"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Patron ID-loan2"
+                            key="2-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Patron ID-loan2"
+                            >
+                              patron_2
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Document ID-loan2"
+                            key="3-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Document ID-loan2"
+                            >
+                              -
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="State-loan2"
+                            key="4-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="State-loan2"
+                            >
+                              -
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Start date-loan2"
+                            key="5-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Start date-loan2"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="End date-loan2"
+                            key="6-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="End date-loan2"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Transaction date-loan2"
+                            key="7-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Transaction date-loan2"
+                            >
+                              Invalid DateTime
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Renewals-loan2"
+                            key="8-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Renewals-loan2"
+                            >
+                              -
+                            </td>
+                          </TableCell>
+                        </tr>
+                      </TableRow>
+                    </tbody>
+                  </TableBody>
+                </ResultsTableBody>
+                <ResultsTableFooter
+                  allRowsNumber={2}
+                  columnsNumber={9}
+                  seeAllComponent={
+                    <SeeAllButton
+                      clickHandler={[Function]}
+                      disabled={false}
+                      fluid={false}
+                    />
+                  }
+                  showMaxRows={5}
+                />
+              </table>
+            </Table>
+          </div>
+        </Segment>
+      </ResultsTable>
+    </Error>
+  </Loader>
+</ItemPastLoans>
+`;
+
+exports[`ItemPastLoans tests should render show a message with no past loans 1`] = `
+<ItemPastLoans
+  data={
+    Object {
+      "hits": Array [],
+      "total": 0,
+    }
+  }
+  fetchPastLoans={[Function]}
+  item={
+    Object {
+      "item_pid": 222,
+      "metadata": Object {
+        "document_pid": 111,
+        "item_pid": 222,
+      },
+    }
+  }
+  showMaxPastLoans={5}
+>
+  <Loader>
+    <Error>
+      <ResultsTable
+        fixed={false}
+        headerActionClickHandler={null}
+        headerActionComponent={null}
+        name="loans"
+        rowActionClickHandler={[Function]}
+        rows={Array []}
+        seeAllComponent={
+          <SeeAllButton
+            clickHandler={[Function]}
+            disabled={false}
+            fluid={false}
+          />
+        }
+        showMaxRows={5}
+        singleLine={false}
+        subtitle=""
+        title="Loans history"
+      >
+        <Segment>
+          <div
+            className="ui segment"
+          >
+            <Grid>
+              <div
+                className="ui grid"
+              >
+                <GridRow>
+                  <div
+                    className="row"
+                  >
+                    <GridColumn
+                      verticalAlign="middle"
+                      width={13}
+                    >
+                      <div
+                        className="middle aligned thirteen wide column"
+                      >
+                        <Header
+                          as="h3"
+                          content="Loans history"
+                          subheader=""
+                        >
+                          <h3
+                            className="ui header"
+                          >
+                            Loans history
+                            <HeaderSubheader
+                              content=""
+                            >
+                              <div
+                                className="sub header"
+                              />
+                            </HeaderSubheader>
+                          </h3>
+                        </Header>
+                      </div>
+                    </GridColumn>
+                    <GridColumn
+                      textAlign="right"
+                      width={3}
+                    >
+                      <div
+                        className="right aligned three wide column"
+                      />
+                    </GridColumn>
+                  </div>
+                </GridRow>
+              </div>
+            </Grid>
+            <Message
+              data-test="no-results"
+            >
+              <div
+                className="ui message"
+                data-test="no-results"
+              >
+                There are no 
+                loans
+                .
+              </div>
+            </Message>
+          </div>
+        </Segment>
+      </ResultsTable>
+    </Error>
+  </Loader>
+</ItemPastLoans>
+`;

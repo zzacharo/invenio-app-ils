@@ -1,0 +1,941 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsTable tests should load the ResultTable component 1`] = `
+<Segment>
+  <Grid>
+    <GridRow>
+      <GridColumn
+        verticalAlign="middle"
+        width={13}
+      />
+      <GridColumn
+        textAlign="right"
+        width={3}
+      />
+    </GridRow>
+  </Grid>
+  <Message
+    data-test="no-results"
+  >
+    There are no 
+    .
+  </Message>
+</Segment>
+`;
+
+exports[`ResultsTable tests should not render the see all button when showing only a few rows 1`] = `
+<ResultsTable
+  fixed={false}
+  headerActionClickHandler={null}
+  headerActionComponent={null}
+  rowActionClickHandler={[Function]}
+  rows={
+    Array [
+      Object {
+        "ID": "loan1",
+        "end_date": "2018-01-01",
+        "patron_pid": "patron_1",
+        "start_date": "2018-01-01",
+        "updated": "2018-01-01",
+      },
+      Object {
+        "ID": "loan2",
+        "end_date": "2018-01-01",
+        "patron_pid": "patron_2",
+        "start_date": "2018-01-01",
+        "updated": "2018-01-01",
+      },
+    ]
+  }
+  seeAllComponent={null}
+  showMaxRows={3}
+  singleLine={false}
+  subtitle=""
+  title=""
+>
+  <Segment>
+    <div
+      className="ui segment"
+    >
+      <Grid>
+        <div
+          className="ui grid"
+        >
+          <GridRow>
+            <div
+              className="row"
+            >
+              <GridColumn
+                verticalAlign="middle"
+                width={13}
+              >
+                <div
+                  className="middle aligned thirteen wide column"
+                />
+              </GridColumn>
+              <GridColumn
+                textAlign="right"
+                width={3}
+              >
+                <div
+                  className="right aligned three wide column"
+                />
+              </GridColumn>
+            </div>
+          </GridRow>
+        </div>
+      </Grid>
+      <Table
+        as="table"
+        selectable={true}
+        striped={true}
+      >
+        <table
+          className="ui selectable striped table"
+        >
+          <ResultsTableHeader
+            columns={
+              Array [
+                "ID",
+                "patron_pid",
+                "updated",
+                "start_date",
+                "end_date",
+              ]
+            }
+            withRowAction={true}
+          >
+            <TableHeader
+              as="thead"
+            >
+              <thead
+                className=""
+              >
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                  data-test="header"
+                >
+                  <tr
+                    className=""
+                    data-test="header"
+                  >
+                    <TableHeaderCell
+                      as="th"
+                      collapsing={true}
+                      width={2}
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                        collapsing={true}
+                        width={2}
+                      >
+                        <th
+                          className="collapsing two wide"
+                        />
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="ID"
+                      width={2}
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                        width={2}
+                      >
+                        <th
+                          className="two wide"
+                        >
+                          ID
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="patron_pid"
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                      >
+                        <th
+                          className=""
+                        >
+                          patron_pid
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="updated"
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                      >
+                        <th
+                          className=""
+                        >
+                          updated
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="start_date"
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                      >
+                        <th
+                          className=""
+                        >
+                          start_date
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="end_date"
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                      >
+                        <th
+                          className=""
+                        >
+                          end_date
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                  </tr>
+                </TableRow>
+              </thead>
+            </TableHeader>
+          </ResultsTableHeader>
+          <ResultsTableBody
+            columns={
+              Array [
+                "ID",
+                "patron_pid",
+                "updated",
+                "start_date",
+                "end_date",
+              ]
+            }
+            rowActionClickHandler={[Function]}
+            rows={
+              Array [
+                Object {
+                  "ID": "loan1",
+                  "end_date": "2018-01-01",
+                  "patron_pid": "patron_1",
+                  "start_date": "2018-01-01",
+                  "updated": "2018-01-01",
+                },
+                Object {
+                  "ID": "loan2",
+                  "end_date": "2018-01-01",
+                  "patron_pid": "patron_2",
+                  "start_date": "2018-01-01",
+                  "updated": "2018-01-01",
+                },
+              ]
+            }
+          >
+            <TableBody
+              as="tbody"
+            >
+              <tbody
+                className=""
+              >
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                  data-test="loan1"
+                  key="loan1"
+                >
+                  <tr
+                    className=""
+                    data-test="loan1"
+                  >
+                    <TableCell
+                      as="td"
+                      textAlign="center"
+                    >
+                      <td
+                        className="center aligned"
+                      >
+                        <Button
+                          as="button"
+                          circular={true}
+                          compact={true}
+                          data-test="btn-view-details-loan1"
+                          icon="eye"
+                          onClick={[Function]}
+                        >
+                          <button
+                            className="ui circular compact icon button"
+                            data-test="btn-view-details-loan1"
+                            onClick={[Function]}
+                          >
+                            <Icon
+                              as="i"
+                              name="eye"
+                            >
+                              <i
+                                aria-hidden="true"
+                                className="eye icon"
+                              />
+                            </Icon>
+                          </button>
+                        </Button>
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="ID-loan1"
+                      key="0-loan1"
+                    >
+                      <td
+                        className=""
+                        data-test="ID-loan1"
+                      >
+                        loan1
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="patron_pid-loan1"
+                      key="1-loan1"
+                    >
+                      <td
+                        className=""
+                        data-test="patron_pid-loan1"
+                      >
+                        patron_1
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="updated-loan1"
+                      key="2-loan1"
+                    >
+                      <td
+                        className=""
+                        data-test="updated-loan1"
+                      >
+                        2018-01-01
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="start_date-loan1"
+                      key="3-loan1"
+                    >
+                      <td
+                        className=""
+                        data-test="start_date-loan1"
+                      >
+                        2018-01-01
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="end_date-loan1"
+                      key="4-loan1"
+                    >
+                      <td
+                        className=""
+                        data-test="end_date-loan1"
+                      >
+                        2018-01-01
+                      </td>
+                    </TableCell>
+                  </tr>
+                </TableRow>
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                  data-test="loan2"
+                  key="loan2"
+                >
+                  <tr
+                    className=""
+                    data-test="loan2"
+                  >
+                    <TableCell
+                      as="td"
+                      textAlign="center"
+                    >
+                      <td
+                        className="center aligned"
+                      >
+                        <Button
+                          as="button"
+                          circular={true}
+                          compact={true}
+                          data-test="btn-view-details-loan2"
+                          icon="eye"
+                          onClick={[Function]}
+                        >
+                          <button
+                            className="ui circular compact icon button"
+                            data-test="btn-view-details-loan2"
+                            onClick={[Function]}
+                          >
+                            <Icon
+                              as="i"
+                              name="eye"
+                            >
+                              <i
+                                aria-hidden="true"
+                                className="eye icon"
+                              />
+                            </Icon>
+                          </button>
+                        </Button>
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="ID-loan2"
+                      key="0-loan2"
+                    >
+                      <td
+                        className=""
+                        data-test="ID-loan2"
+                      >
+                        loan2
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="patron_pid-loan2"
+                      key="1-loan2"
+                    >
+                      <td
+                        className=""
+                        data-test="patron_pid-loan2"
+                      >
+                        patron_2
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="updated-loan2"
+                      key="2-loan2"
+                    >
+                      <td
+                        className=""
+                        data-test="updated-loan2"
+                      >
+                        2018-01-01
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="start_date-loan2"
+                      key="3-loan2"
+                    >
+                      <td
+                        className=""
+                        data-test="start_date-loan2"
+                      >
+                        2018-01-01
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="end_date-loan2"
+                      key="4-loan2"
+                    >
+                      <td
+                        className=""
+                        data-test="end_date-loan2"
+                      >
+                        2018-01-01
+                      </td>
+                    </TableCell>
+                  </tr>
+                </TableRow>
+              </tbody>
+            </TableBody>
+          </ResultsTableBody>
+          <ResultsTableFooter
+            allRowsNumber={2}
+            columnsNumber={5}
+            seeAllComponent={null}
+            showMaxRows={3}
+          />
+        </table>
+      </Table>
+    </div>
+  </Segment>
+</ResultsTable>
+`;
+
+exports[`ResultsTable tests should render the see all button when showing only a few rows 1`] = `
+<ResultsTable
+  fixed={false}
+  headerActionClickHandler={null}
+  headerActionComponent={null}
+  rowActionClickHandler={[Function]}
+  rows={
+    Array [
+      Object {
+        "ID": "1",
+        "end_date": "2018-01-01",
+        "loan_pid": "loan1",
+        "patron_pid": "patron_1",
+        "start_date": "2018-01-01",
+        "updated": "2018-01-01",
+      },
+      Object {
+        "ID": "2",
+        "end_date": "2018-01-01",
+        "loan_pid": "loan2",
+        "patron_pid": "patron_2",
+        "start_date": "2018-01-01",
+        "updated": "2018-01-01",
+      },
+    ]
+  }
+  seeAllComponent={
+    <Button
+      as="button"
+      onClick={[Function]}
+      size="small"
+    >
+      See all
+    </Button>
+  }
+  showMaxRows={1}
+  singleLine={false}
+  subtitle=""
+  title=""
+>
+  <Segment>
+    <div
+      className="ui segment"
+    >
+      <Grid>
+        <div
+          className="ui grid"
+        >
+          <GridRow>
+            <div
+              className="row"
+            >
+              <GridColumn
+                verticalAlign="middle"
+                width={13}
+              >
+                <div
+                  className="middle aligned thirteen wide column"
+                />
+              </GridColumn>
+              <GridColumn
+                textAlign="right"
+                width={3}
+              >
+                <div
+                  className="right aligned three wide column"
+                />
+              </GridColumn>
+            </div>
+          </GridRow>
+        </div>
+      </Grid>
+      <Table
+        as="table"
+        selectable={true}
+        striped={true}
+      >
+        <table
+          className="ui selectable striped table"
+        >
+          <ResultsTableHeader
+            columns={
+              Array [
+                "loan_pid",
+                "ID",
+                "patron_pid",
+                "updated",
+                "start_date",
+                "end_date",
+              ]
+            }
+            withRowAction={true}
+          >
+            <TableHeader
+              as="thead"
+            >
+              <thead
+                className=""
+              >
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                  data-test="header"
+                >
+                  <tr
+                    className=""
+                    data-test="header"
+                  >
+                    <TableHeaderCell
+                      as="th"
+                      collapsing={true}
+                      width={2}
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                        collapsing={true}
+                        width={2}
+                      >
+                        <th
+                          className="collapsing two wide"
+                        />
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="loan_pid"
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                      >
+                        <th
+                          className=""
+                        >
+                          loan_pid
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="ID"
+                      width={2}
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                        width={2}
+                      >
+                        <th
+                          className="two wide"
+                        >
+                          ID
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="patron_pid"
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                      >
+                        <th
+                          className=""
+                        >
+                          patron_pid
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="updated"
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                      >
+                        <th
+                          className=""
+                        >
+                          updated
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="start_date"
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                      >
+                        <th
+                          className=""
+                        >
+                          start_date
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      key="end_date"
+                    >
+                      <TableCell
+                        as="th"
+                        className=""
+                      >
+                        <th
+                          className=""
+                        >
+                          end_date
+                        </th>
+                      </TableCell>
+                    </TableHeaderCell>
+                  </tr>
+                </TableRow>
+              </thead>
+            </TableHeader>
+          </ResultsTableHeader>
+          <ResultsTableBody
+            columns={
+              Array [
+                "loan_pid",
+                "ID",
+                "patron_pid",
+                "updated",
+                "start_date",
+                "end_date",
+              ]
+            }
+            rowActionClickHandler={[Function]}
+            rows={
+              Array [
+                Object {
+                  "ID": "1",
+                  "end_date": "2018-01-01",
+                  "loan_pid": "loan1",
+                  "patron_pid": "patron_1",
+                  "start_date": "2018-01-01",
+                  "updated": "2018-01-01",
+                },
+              ]
+            }
+          >
+            <TableBody
+              as="tbody"
+            >
+              <tbody
+                className=""
+              >
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                  data-test="1"
+                  key="1"
+                >
+                  <tr
+                    className=""
+                    data-test="1"
+                  >
+                    <TableCell
+                      as="td"
+                      textAlign="center"
+                    >
+                      <td
+                        className="center aligned"
+                      >
+                        <Button
+                          as="button"
+                          circular={true}
+                          compact={true}
+                          data-test="btn-view-details-1"
+                          icon="eye"
+                          onClick={[Function]}
+                        >
+                          <button
+                            className="ui circular compact icon button"
+                            data-test="btn-view-details-1"
+                            onClick={[Function]}
+                          >
+                            <Icon
+                              as="i"
+                              name="eye"
+                            >
+                              <i
+                                aria-hidden="true"
+                                className="eye icon"
+                              />
+                            </Icon>
+                          </button>
+                        </Button>
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="loan_pid-1"
+                      key="0-1"
+                    >
+                      <td
+                        className=""
+                        data-test="loan_pid-1"
+                      >
+                        loan1
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="ID-1"
+                      key="1-1"
+                    >
+                      <td
+                        className=""
+                        data-test="ID-1"
+                      >
+                        1
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="patron_pid-1"
+                      key="2-1"
+                    >
+                      <td
+                        className=""
+                        data-test="patron_pid-1"
+                      >
+                        patron_1
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="updated-1"
+                      key="3-1"
+                    >
+                      <td
+                        className=""
+                        data-test="updated-1"
+                      >
+                        2018-01-01
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="start_date-1"
+                      key="4-1"
+                    >
+                      <td
+                        className=""
+                        data-test="start_date-1"
+                      >
+                        2018-01-01
+                      </td>
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                      data-test="end_date-1"
+                      key="5-1"
+                    >
+                      <td
+                        className=""
+                        data-test="end_date-1"
+                      >
+                        2018-01-01
+                      </td>
+                    </TableCell>
+                  </tr>
+                </TableRow>
+              </tbody>
+            </TableBody>
+          </ResultsTableBody>
+          <ResultsTableFooter
+            allRowsNumber={2}
+            columnsNumber={6}
+            seeAllComponent={
+              <Button
+                as="button"
+                onClick={[Function]}
+                size="small"
+              >
+                See all
+              </Button>
+            }
+            showMaxRows={1}
+          >
+            <TableFooter
+              as="tfoot"
+              data-test="footer"
+              fullWidth={true}
+            >
+              <TableHeader
+                as="tfoot"
+                data-test="footer"
+                fullWidth={true}
+              >
+                <tfoot
+                  className="full-width"
+                  data-test="footer"
+                >
+                  <TableRow
+                    as="tr"
+                    cellAs="td"
+                  >
+                    <tr
+                      className=""
+                    >
+                      <TableHeaderCell
+                        as="th"
+                        colSpan={7}
+                        textAlign="right"
+                      >
+                        <TableCell
+                          as="th"
+                          className=""
+                          colSpan={7}
+                          textAlign="right"
+                        >
+                          <th
+                            className="right aligned"
+                            colSpan={7}
+                          >
+                            <span>
+                              Showing first 
+                              1
+                               entries of
+                               
+                              2
+                               
+                            </span>
+                            <span>
+                              <Button
+                                as="button"
+                                onClick={[Function]}
+                                size="small"
+                              >
+                                <button
+                                  className="ui small button"
+                                  onClick={[Function]}
+                                >
+                                  See all
+                                </button>
+                              </Button>
+                            </span>
+                          </th>
+                        </TableCell>
+                      </TableHeaderCell>
+                    </tr>
+                  </TableRow>
+                </tfoot>
+              </TableHeader>
+            </TableFooter>
+          </ResultsTableFooter>
+        </table>
+      </Table>
+    </div>
+  </Segment>
+</ResultsTable>
+`;

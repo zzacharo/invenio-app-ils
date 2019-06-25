@@ -1,0 +1,665 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IdleLoansList tests should load the details component 1`] = `
+<Loader>
+  <Error>
+    <ResultsTable
+      fixed={false}
+      headerActionClickHandler={null}
+      headerActionComponent={null}
+      name="idle loans"
+      rowActionClickHandler={[Function]}
+      rows={Array []}
+      seeAllComponent={
+        <SeeAllButton
+          clickHandler={[Function]}
+          disabled={false}
+          fluid={false}
+        />
+      }
+      showMaxRows={5}
+      singleLine={false}
+      subtitle="Loan requests in PENDING state longer than 10 days."
+      title="Idle loans"
+    />
+  </Error>
+</Loader>
+`;
+
+exports[`IdleLoansList tests should render loans 1`] = `
+<IdleLoansList
+  data={
+    Object {
+      "hits": Array [
+        Object {
+          "created": "2018-01-01T11:05:00+01:00",
+          "id": 1,
+          "loan_pid": "loan1",
+          "metadata": Object {
+            "document_pid": "doc1",
+            "end_date": "2018-01-01T11:05:00+01:00",
+            "loan_pid": "loan1",
+            "patron_pid": "patron_1",
+            "start_date": "2018-01-01T11:05:00+01:00",
+          },
+          "updated": "2018-01-01T11:05:00+01:00",
+        },
+        Object {
+          "created": "2018-01-01T11:05:00+01:00",
+          "id": 2,
+          "loan_pid": "loan2",
+          "metadata": Object {
+            "document_pid": "doc1",
+            "end_date": "2018-01-01T11:05:00+01:00",
+            "loan_pid": "loan2",
+            "patron_pid": "patron_2",
+            "start_date": "2018-01-01T11:05:00+01:00",
+          },
+          "updated": "2018-01-01T11:05:00+01:00",
+        },
+      ],
+      "total": 2,
+    }
+  }
+  fetchIdlePendingLoans={[Function]}
+  showMaxEntries={5}
+>
+  <Loader>
+    <Error>
+      <ResultsTable
+        fixed={false}
+        headerActionClickHandler={null}
+        headerActionComponent={null}
+        name="idle loans"
+        rowActionClickHandler={[Function]}
+        rows={
+          Array [
+            Object {
+              "Document ID": "doc1",
+              "ID": "loan1",
+              "Patron ID": "patron_1",
+              "Start date": "2018-01-01 10:05",
+              "Updated": "2018-01-01 10:05",
+            },
+            Object {
+              "Document ID": "doc1",
+              "ID": "loan2",
+              "Patron ID": "patron_2",
+              "Start date": "2018-01-01 10:05",
+              "Updated": "2018-01-01 10:05",
+            },
+          ]
+        }
+        seeAllComponent={
+          <SeeAllButton
+            clickHandler={[Function]}
+            disabled={false}
+            fluid={false}
+          />
+        }
+        showMaxRows={5}
+        singleLine={false}
+        subtitle="Loan requests in PENDING state longer than 10 days."
+        title="Idle loans"
+      >
+        <Segment>
+          <div
+            className="ui segment"
+          >
+            <Grid>
+              <div
+                className="ui grid"
+              >
+                <GridRow>
+                  <div
+                    className="row"
+                  >
+                    <GridColumn
+                      verticalAlign="middle"
+                      width={13}
+                    >
+                      <div
+                        className="middle aligned thirteen wide column"
+                      >
+                        <Header
+                          as="h3"
+                          content="Idle loans"
+                          subheader="Loan requests in PENDING state longer than 10 days."
+                        >
+                          <h3
+                            className="ui header"
+                          >
+                            Idle loans
+                            <HeaderSubheader
+                              content="Loan requests in PENDING state longer than 10 days."
+                            >
+                              <div
+                                className="sub header"
+                              >
+                                Loan requests in PENDING state longer than 10 days.
+                              </div>
+                            </HeaderSubheader>
+                          </h3>
+                        </Header>
+                      </div>
+                    </GridColumn>
+                    <GridColumn
+                      textAlign="right"
+                      width={3}
+                    >
+                      <div
+                        className="right aligned three wide column"
+                      />
+                    </GridColumn>
+                  </div>
+                </GridRow>
+              </div>
+            </Grid>
+            <Table
+              as="table"
+              selectable={true}
+              striped={true}
+            >
+              <table
+                className="ui selectable striped table"
+              >
+                <ResultsTableHeader
+                  columns={
+                    Array [
+                      "ID",
+                      "Updated",
+                      "Patron ID",
+                      "Document ID",
+                      "Start date",
+                    ]
+                  }
+                  withRowAction={true}
+                >
+                  <TableHeader
+                    as="thead"
+                  >
+                    <thead
+                      className=""
+                    >
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        data-test="header"
+                      >
+                        <tr
+                          className=""
+                          data-test="header"
+                        >
+                          <TableHeaderCell
+                            as="th"
+                            collapsing={true}
+                            width={2}
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                              collapsing={true}
+                              width={2}
+                            >
+                              <th
+                                className="collapsing two wide"
+                              />
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="ID"
+                            width={2}
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                              width={2}
+                            >
+                              <th
+                                className="two wide"
+                              >
+                                ID
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Updated"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Updated
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Patron ID"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Patron ID
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Document ID"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Document ID
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                          <TableHeaderCell
+                            as="th"
+                            key="Start date"
+                          >
+                            <TableCell
+                              as="th"
+                              className=""
+                            >
+                              <th
+                                className=""
+                              >
+                                Start date
+                              </th>
+                            </TableCell>
+                          </TableHeaderCell>
+                        </tr>
+                      </TableRow>
+                    </thead>
+                  </TableHeader>
+                </ResultsTableHeader>
+                <ResultsTableBody
+                  columns={
+                    Array [
+                      "ID",
+                      "Updated",
+                      "Patron ID",
+                      "Document ID",
+                      "Start date",
+                    ]
+                  }
+                  rowActionClickHandler={[Function]}
+                  rows={
+                    Array [
+                      Object {
+                        "Document ID": "doc1",
+                        "ID": "loan1",
+                        "Patron ID": "patron_1",
+                        "Start date": "2018-01-01 10:05",
+                        "Updated": "2018-01-01 10:05",
+                      },
+                      Object {
+                        "Document ID": "doc1",
+                        "ID": "loan2",
+                        "Patron ID": "patron_2",
+                        "Start date": "2018-01-01 10:05",
+                        "Updated": "2018-01-01 10:05",
+                      },
+                    ]
+                  }
+                >
+                  <TableBody
+                    as="tbody"
+                  >
+                    <tbody
+                      className=""
+                    >
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        data-test="loan1"
+                        key="loan1"
+                      >
+                        <tr
+                          className=""
+                          data-test="loan1"
+                        >
+                          <TableCell
+                            as="td"
+                            textAlign="center"
+                          >
+                            <td
+                              className="center aligned"
+                            >
+                              <Button
+                                as="button"
+                                circular={true}
+                                compact={true}
+                                data-test="btn-view-details-loan1"
+                                icon="eye"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="ui circular compact icon button"
+                                  data-test="btn-view-details-loan1"
+                                  onClick={[Function]}
+                                >
+                                  <Icon
+                                    as="i"
+                                    name="eye"
+                                  >
+                                    <i
+                                      aria-hidden="true"
+                                      className="eye icon"
+                                    />
+                                  </Icon>
+                                </button>
+                              </Button>
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="ID-loan1"
+                            key="0-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="ID-loan1"
+                            >
+                              loan1
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Updated-loan1"
+                            key="1-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Updated-loan1"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Patron ID-loan1"
+                            key="2-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Patron ID-loan1"
+                            >
+                              patron_1
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Document ID-loan1"
+                            key="3-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Document ID-loan1"
+                            >
+                              doc1
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Start date-loan1"
+                            key="4-loan1"
+                          >
+                            <td
+                              className=""
+                              data-test="Start date-loan1"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                        </tr>
+                      </TableRow>
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        data-test="loan2"
+                        key="loan2"
+                      >
+                        <tr
+                          className=""
+                          data-test="loan2"
+                        >
+                          <TableCell
+                            as="td"
+                            textAlign="center"
+                          >
+                            <td
+                              className="center aligned"
+                            >
+                              <Button
+                                as="button"
+                                circular={true}
+                                compact={true}
+                                data-test="btn-view-details-loan2"
+                                icon="eye"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="ui circular compact icon button"
+                                  data-test="btn-view-details-loan2"
+                                  onClick={[Function]}
+                                >
+                                  <Icon
+                                    as="i"
+                                    name="eye"
+                                  >
+                                    <i
+                                      aria-hidden="true"
+                                      className="eye icon"
+                                    />
+                                  </Icon>
+                                </button>
+                              </Button>
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="ID-loan2"
+                            key="0-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="ID-loan2"
+                            >
+                              loan2
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Updated-loan2"
+                            key="1-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Updated-loan2"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Patron ID-loan2"
+                            key="2-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Patron ID-loan2"
+                            >
+                              patron_2
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Document ID-loan2"
+                            key="3-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Document ID-loan2"
+                            >
+                              doc1
+                            </td>
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                            data-test="Start date-loan2"
+                            key="4-loan2"
+                          >
+                            <td
+                              className=""
+                              data-test="Start date-loan2"
+                            >
+                              2018-01-01 10:05
+                            </td>
+                          </TableCell>
+                        </tr>
+                      </TableRow>
+                    </tbody>
+                  </TableBody>
+                </ResultsTableBody>
+                <ResultsTableFooter
+                  allRowsNumber={2}
+                  columnsNumber={5}
+                  seeAllComponent={
+                    <SeeAllButton
+                      clickHandler={[Function]}
+                      disabled={false}
+                      fluid={false}
+                    />
+                  }
+                  showMaxRows={5}
+                />
+              </table>
+            </Table>
+          </div>
+        </Segment>
+      </ResultsTable>
+    </Error>
+  </Loader>
+</IdleLoansList>
+`;
+
+exports[`IdleLoansList tests should render show a message with no loans 1`] = `
+<IdleLoansList
+  data={
+    Object {
+      "hits": Array [],
+      "total": 0,
+    }
+  }
+  fetchIdlePendingLoans={[Function]}
+  showMaxEntries={5}
+>
+  <Loader>
+    <Error>
+      <ResultsTable
+        fixed={false}
+        headerActionClickHandler={null}
+        headerActionComponent={null}
+        name="idle loans"
+        rowActionClickHandler={[Function]}
+        rows={Array []}
+        seeAllComponent={
+          <SeeAllButton
+            clickHandler={[Function]}
+            disabled={false}
+            fluid={false}
+          />
+        }
+        showMaxRows={5}
+        singleLine={false}
+        subtitle="Loan requests in PENDING state longer than 10 days."
+        title="Idle loans"
+      >
+        <Segment>
+          <div
+            className="ui segment"
+          >
+            <Grid>
+              <div
+                className="ui grid"
+              >
+                <GridRow>
+                  <div
+                    className="row"
+                  >
+                    <GridColumn
+                      verticalAlign="middle"
+                      width={13}
+                    >
+                      <div
+                        className="middle aligned thirteen wide column"
+                      >
+                        <Header
+                          as="h3"
+                          content="Idle loans"
+                          subheader="Loan requests in PENDING state longer than 10 days."
+                        >
+                          <h3
+                            className="ui header"
+                          >
+                            Idle loans
+                            <HeaderSubheader
+                              content="Loan requests in PENDING state longer than 10 days."
+                            >
+                              <div
+                                className="sub header"
+                              >
+                                Loan requests in PENDING state longer than 10 days.
+                              </div>
+                            </HeaderSubheader>
+                          </h3>
+                        </Header>
+                      </div>
+                    </GridColumn>
+                    <GridColumn
+                      textAlign="right"
+                      width={3}
+                    >
+                      <div
+                        className="right aligned three wide column"
+                      />
+                    </GridColumn>
+                  </div>
+                </GridRow>
+              </div>
+            </Grid>
+            <Message
+              data-test="no-results"
+            >
+              <div
+                className="ui message"
+                data-test="no-results"
+              >
+                There are no 
+                idle loans
+                .
+              </div>
+            </Message>
+          </div>
+        </Segment>
+      </ResultsTable>
+    </Error>
+  </Loader>
+</IdleLoansList>
+`;
