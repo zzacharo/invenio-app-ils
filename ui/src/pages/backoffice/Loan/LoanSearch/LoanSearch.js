@@ -21,6 +21,7 @@ import {
   ResultsTable,
 } from '@components';
 import { dateFormatter } from '@api/date';
+import { responseRejectInterceptor } from '@api/base';
 import {
   ExportReactSearchKitResults,
   OverdueLoanSendMailModal,
@@ -33,6 +34,9 @@ export class LoanSearch extends Component {
   searchApi = new InvenioSearchApi({
     url: loanApi.searchBaseURL,
     withCredentials: true,
+    interceptors: {
+      response: { reject: responseRejectInterceptor },
+    },
   });
   searchConfig = getSearchConfig('loans');
 

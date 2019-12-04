@@ -20,6 +20,7 @@ import {
   ResultsTable,
 } from '@components';
 import { patron as patronApi } from '@api';
+import { responseRejectInterceptor } from '@api/base';
 import { getSearchConfig } from '@config';
 import { ExportReactSearchKitResults } from '../../components';
 import ClearButton from '@components/SearchControls/components/ClearButton/ClearButton';
@@ -28,6 +29,9 @@ export class PatronSearch extends Component {
   searchApi = new InvenioSearchApi({
     url: patronApi.searchBaseURL,
     withCredentials: true,
+    interceptors: {
+      response: { reject: responseRejectInterceptor },
+    },
   });
   searchConfig = getSearchConfig('patrons');
 

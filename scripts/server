@@ -9,6 +9,6 @@
 set -e
 
 script_path=$(dirname "$0")
-FLASK_ENV=development invenio run \
+FLASK_ENV=development invenio run -h 0.0.0.0 \
     --cert "$script_path"/../docker/nginx/test.crt \
     --key "$script_path"/../docker/nginx/test.key

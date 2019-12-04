@@ -3,5 +3,21 @@ export const ES_MAX_SIZE = 1000;
 export const SUCCESS_AUTO_DISMISS_SECONDS = 10;
 export const TRUNCATE_LENGTH = 128;
 
+export const ENABLE_LOCAL_ACCOUNT_LOGIN = true;
+export const ENABLE_OAUTH_LOGIN = true;
+export const OAUTH_PROVIDERS = [
+  {
+    label: 'Sign in with Cern',
+    name: 'cern',
+    baseUrl: '/api/oauth/login/cern',
+    icon: 'sign in',
+  },
+  {
+    label: 'Sign in with Github',
+    name: 'gihub',
+    baseUrl: '/api/oauth/login/github',
+    icon: 'github',
+  },
+];
 export { getSearchConfig } from './searchConfig';
 export { invenioConfig } from './invenioConfig';

@@ -25,11 +25,15 @@ import { ExportReactSearchKitResults } from '../../components';
 import { BackOfficeRoutes } from '@routes/urls';
 import ClearButton from '@components/SearchControls/components/ClearButton/ClearButton';
 import history from '@history';
+import { responseRejectInterceptor } from '@api/base';
 
 export class DocumentRequestSearch extends Component {
   searchApi = new InvenioSearchApi({
     url: documentRequestApi.searchBaseURL,
     withCredentials: true,
+    interceptors: {
+      response: { reject: responseRejectInterceptor },
+    },
   });
   searchConfig = getSearchConfig('documentRequests');
 

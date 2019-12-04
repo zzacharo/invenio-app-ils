@@ -20,6 +20,7 @@ from datetime import timedelta
 
 from flask import request
 from invenio_app.config import APP_DEFAULT_SECURE_HEADERS
+from invenio_oauthclient.contrib import cern
 from invenio_pidrelations.config import RelationType
 from invenio_records_rest.facets import terms_filter
 from invenio_records_rest.utils import deny_all
@@ -31,6 +32,7 @@ from .acquisition.api import Order, Vendor
 from .acquisition.search.api import OrderSearch, VendorSearch
 from .circulation.search import IlsLoansSearch
 from .facets import keyed_range_filter
+from .records.oauth import ils_oauth_response_handler
 from .records.resolver.loan import document_resolver, item_resolver, \
     loan_patron_resolver
 
@@ -162,6 +164,17 @@ def _(x):
     """Identity function used to trigger string extraction."""
     return x
 
+###############################################################################
+# OAuth
+###############################################################################
+
+OAUTH_REMOTE_APP = cern.REMOTE_REST_APP
+OAUTH_REMOTE_APP["authorized_url"] = '/login'
+OAUTH_REMOTE_APP["response_handler"] = ils_oauth_response_handler
+
+OAUTHCLIENT_REST_REMOTE_APPS = dict(
+    cern=OAUTH_REMOTE_APP,
+)
 
 # Rate limiting
 # =============
@@ -303,7 +316,7 @@ SESSION_COOKIE_SECURE = True
 #: provided, the allowed hosts variable is set to localhost. In production it
 #: should be set to the correct host and it is strongly recommended to only
 #: route correct hosts to the application.
-APP_ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+APP_ALLOWED_HOSTS = ["localhost", "127.0.0.1", "zacharias-macbook.dyndns.cern.ch"]
 APP_DEFAULT_SECURE_HEADERS["content_security_policy"] = {}
 
 # OAI-PMH

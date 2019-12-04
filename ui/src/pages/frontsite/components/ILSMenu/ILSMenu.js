@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Menu, Dropdown, Responsive } from 'semantic-ui-react';
-import {
-  authenticationService,
-  sessionManager,
-} from '@authentication/services';
+import { authenticationService } from '@authentication/services';
 import { FrontSiteRoutes, BackOfficeRoutes } from '@routes/urls';
-import { LoginButton } from '@components';
+import { LoginRedirectButton } from '@authentication/components';
+import { goTo } from '@history';
 
 export default class ILSMenu extends Component {
+  logout = async () => {
+    try {
+      const resp = await authenticationService.logout();
+      if (resp) {
+        this.props.fetchhUserProfile();
+        goTo(window.location.pathname);
+      }
+    } catch (e) {
+      this.props.sendErrorNotification(
+        'Logout',
+        'Something went wrong. Please try to logout again.'
+      );
+    }
+  };
+
   renderRightDropDown = userMenuText => {
     return (
       <Dropdown item text={userMenuText} icon="user">
@@ -16,7 +29,10 @@ export default class ILSMenu extends Component {
           <Dropdown.Item as={Link} to={FrontSiteRoutes.patronProfile}>
             Your Profile
           </Dropdown.Item>
-          {sessionManager.hasRoles(['admin', 'librarian']) ? (
+          {authenticationService.hasRoles(this.props.user, [
+            'admin',
+            'librarian',
+          ]) ? (
             <>
               <Dropdown.Divider />
               <Dropdown.Item as={Link} to={BackOfficeRoutes.home}>
@@ -25,25 +41,15 @@ export default class ILSMenu extends Component {
             </>
           ) : null}
           <Dropdown.Divider />
-          <Dropdown.Item
-            onClick={() => {
-              authenticationService.logout(FrontSiteRoutes.home);
-            }}
-          >
-            Sign out
-          </Dropdown.Item>
+          <Dropdown.Item onClick={this.logout}>Sign out</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     );
   };
 
   renderRightMenuItem = (userMenuText = '') => {
-    return !sessionManager.authenticated ? (
-      <LoginButton
-        clickHandler={() => {
-          authenticationService.login(FrontSiteRoutes.home);
-        }}
-      />
+    return this.props.isAnonymous ? (
+      <LoginRedirectButton secondary size="small" />
     ) : (
       this.renderRightDropDown(userMenuText)
     );
@@ -67,7 +73,7 @@ export default class ILSMenu extends Component {
               <Menu.Menu position="right">
                 <Menu.Item>
                   {this.renderRightMenuItem(
-                    `Hello, ${sessionManager.user.username}`
+                    `Hello, ${this.props.user.username}`
                   )}
                 </Menu.Item>
               </Menu.Menu>

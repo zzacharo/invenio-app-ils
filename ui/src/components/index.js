@@ -4,7 +4,6 @@ export { Error } from './Error';
 export { ResultsSort } from './ResultsSort/ResultsSort';
 export { ResultsTable } from './ResultsTable/ResultsTable';
 export { SearchBar } from './SearchBar';
-export { LoginButton } from './LoginButton';
 export { Pagination } from './Pagination';
 export { DatePicker } from './DatePicker';
 export { DateRangePicker } from './DateRangePicker';

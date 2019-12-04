@@ -61,9 +61,11 @@ import {
   patronCurrentDocumentRequestsReducer,
   patronPastDocumentRequestsReducer,
 } from '@pages/frontsite/PatronProfile/reducer';
+import { authenticationReducer } from '@authentication/reducer';
 
 const rootReducer = combineReducers({
   availableItems: availableItemsReducer,
+  authenticationManagement: authenticationReducer,
   deleteRecordModal: deleteRecordModalReducer,
   documentDetails: documentDetailsReducer,
   documentItems: documentItems,

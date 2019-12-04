@@ -1,5 +1,24 @@
 import { generatePath } from 'react-router-dom';
 
+const LoginBase = '/login';
+
+const AuthenticationRoutesList = {
+  login: LoginBase,
+  redirectUrlAfterLogin: `${LoginBase}?next=:nextUrl`,
+};
+
+const AuthenticationRoutesGenerators = {
+  redirectAfterLogin: nextUrl =>
+    generatePath(AuthenticationRoutesList.redirectUrlAfterLogin, {
+      nextUrl: nextUrl,
+    }),
+};
+
+export const AuthenticationRoutes = {
+  ...AuthenticationRoutesList,
+  ...AuthenticationRoutesGenerators,
+};
+
 const FrontSiteBase = '/';
 
 const FrontSiteRoutesList = {

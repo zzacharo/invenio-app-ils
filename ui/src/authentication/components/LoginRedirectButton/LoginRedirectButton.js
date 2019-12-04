@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { authenticationService } from '@authentication/services';
 import { Button } from 'semantic-ui-react';
+import { AuthenticationRoutes } from '@routes/urls';
+import { goTo } from '@history';
 
 export class LoginRedirectButton extends Component {
   render() {
-    const { content } = this.props;
+    const { content, nextUrl, ...restProps } = this.props;
     return (
       <Button
-        positive
+        fluid
         content={content}
-        onClick={() => authenticationService.login(window.location.pathname)}
+        {...restProps}
+        onClick={() => {
+          goTo(
+            AuthenticationRoutes.redirectAfterLogin(
+              nextUrl || window.location.pathname
+            )
+          );
+        }}
       />
     );
   }
@@ -18,6 +26,7 @@ export class LoginRedirectButton extends Component {
 
 LoginRedirectButton.propTypes = {
   content: PropTypes.string.isRequired,
+  nextUrl: PropTypes.string,
 };
 
 LoginRedirectButton.defaultProps = {

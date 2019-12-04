@@ -9,7 +9,9 @@
 
 from __future__ import absolute_import, print_function
 
-from flask import Blueprint, abort, current_app, request
+from flask import Blueprint, abort, current_app, request, jsonify
+from flask.views import MethodView
+
 from invenio_db import db
 from invenio_records_rest.utils import obj_or_import_string
 from invenio_records_rest.views import pass_record
@@ -23,6 +25,7 @@ from invenio_app_ils.pidstore.pids import DOCUMENT_PID_TYPE, \
 from invenio_app_ils.proxies import current_app_ils_extension
 from invenio_app_ils.signals import record_viewed
 
+from flask_security import current_user, login_required
 
 def create_document_stats_blueprint(app):
     """Create document stats blueprint."""
@@ -107,7 +110,32 @@ def create_document_request_action_blueprint(app):
         methods=["POST"],
     )
 
+    me_view = MeRequestResource.as_view('me')
+
+    blueprint.add_url_rule(
+        "/me",
+        view_func=me_view,
+        methods=["GET"],
+    )
     return blueprint
+
+
+class MeRequestResource(MethodView):
+    """Accept document request action resource."""
+
+    view_name = "{}_accept_request"
+
+    @login_required
+    def get(self):
+        """."""
+        return jsonify(
+            dict(
+                id=str(current_user.id),
+                username=current_user.email,
+                locationPid='1',
+                roles=[role.name for role in current_user.roles],
+            )
+        ), 200
 
 
 class AcceptRequestResource(ContentNegotiatedMethodView):

@@ -20,6 +20,7 @@ import {
   SearchBar as DocumentsSearchBar,
 } from '@components';
 import { document as documentApi } from '@api';
+import { responseRejectInterceptor } from '@api/base';
 import { SearchControls } from '@components';
 import {
   SearchAggregationsCards,
@@ -36,6 +37,9 @@ export class DocumentsSearch extends Component {
   searchApi = new InvenioSearchApi({
     url: documentApi.searchBaseURL,
     withCredentials: true,
+    interceptors: {
+      response: { reject: responseRejectInterceptor },
+    },
   });
   state = { activeIndex: 0, isLayoutGrid: true };
 

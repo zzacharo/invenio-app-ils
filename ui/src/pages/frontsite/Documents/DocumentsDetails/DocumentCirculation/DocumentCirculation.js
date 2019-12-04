@@ -76,7 +76,7 @@ class BookAvailability extends Component {
 
 export default class DocumentCirculation extends Component {
   loginToLoan = () => {
-    return <LoginRedirectButton content={'Login to loan'} />;
+    return <LoginRedirectButton content={'Login to loan'} positive />;
   };
 
   renderLoanRequestForm = () => {

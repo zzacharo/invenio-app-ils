@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
-import { addNotification } from '@components/Notifications/state/actions';
-import AuthenticationGuardComponent from './AuthenticationGuard';
+import { fetchUserProfile } from '@authentication/state/actions';
+import {
+  addNotification,
+  clearNotifications,
+} from '@components/Notifications/state/actions';
+import LoginPageComponent from './LoginPage';
 
 const mapStateToProps = state => ({
   user: state.authenticationManagement.data,
@@ -11,9 +15,11 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   sendErrorNotification: (title, content) =>
     dispatch(addNotification(title, content, 'error')),
+  clearNotifications: () => dispatch(clearNotifications()),
+  fetchUserProfile: () => dispatch(fetchUserProfile()),
 });
 
-export const AuthenticationGuard = connect(
+export const LoginPage = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AuthenticationGuardComponent);
+)(LoginPageComponent);
