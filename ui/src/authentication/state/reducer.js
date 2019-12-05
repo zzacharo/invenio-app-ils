@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: false,
         data: {
-          id: action.payload['id'],
+          id: `${action.payload['id']}`,
           roles: action.payload['roles'] || [],
           username: action.payload['username'],
           locationPid: action.payload['locationPid'],

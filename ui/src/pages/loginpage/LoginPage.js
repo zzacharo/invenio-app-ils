@@ -18,7 +18,7 @@ export default class LoginPage extends Component {
     if ('sessionExpired' in params) {
       this.props.sendErrorNotification(
         'Session Error',
-        'You are either not signed in or your session has been expired.'
+        'You are either not signed in or your session has expired.'
       );
     }
   }

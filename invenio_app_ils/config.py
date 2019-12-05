@@ -19,6 +19,8 @@ from collections import namedtuple
 from datetime import timedelta
 
 from flask import request
+from invenio_accounts.config import ACCOUNTS_REST_AUTH_VIEWS as \
+    _ACCOUNTS_REST_AUTH_VIEWS
 from invenio_app.config import APP_DEFAULT_SECURE_HEADERS
 from invenio_oauthclient.contrib import cern
 from invenio_pidrelations.config import RelationType
@@ -146,6 +148,7 @@ from .records.api import (  # isort:skip
 from .records.permissions import (  # isort:skip
     record_read_permission_factory,
 )
+from .records.views import UserInfoResource
 from .search.api import (  # isort:skip
     DocumentRequestSearch,
     DocumentSearch,
@@ -169,12 +172,22 @@ def _(x):
 ###############################################################################
 
 OAUTH_REMOTE_APP = cern.REMOTE_REST_APP
-OAUTH_REMOTE_APP["authorized_url"] = '/login'
+OAUTH_REMOTE_APP["authorized_url"] = 'http://zacharias-macbook.dyndns.cern.ch:3000/login'
 OAUTH_REMOTE_APP["response_handler"] = ils_oauth_response_handler
 
 OAUTHCLIENT_REST_REMOTE_APPS = dict(
     cern=OAUTH_REMOTE_APP,
 )
+
+CERN_APP_CREDENTIALS = dict(
+    consumer_key='zzacharo_auth',
+    consumer_secret='X2FBnPW0vWnRIB0WyQBVSUaUJTn1AopfXPdiIqpOoag1',
+)
+
+# CERN_APP_CREDENTIALS = dict(
+#     consumer_key='cern-auth',
+#     consumer_secret='a4a2ccb4-57ac-42d0-92a7-513cfb9dfd9a',
+# )
 
 # Rate limiting
 # =============
@@ -248,6 +261,9 @@ SECURITY_EMAIL_SUBJECT_REGISTER = _("Welcome to invenio-app-ils!")
 #: Redis session storage URL.
 ACCOUNTS_SESSION_REDIS_URL = "redis://localhost:6379/1"
 
+_ACCOUNTS_REST_AUTH_VIEWS.update(user_info=UserInfoResource)
+ACCOUNTS_REST_AUTH_VIEWS = _ACCOUNTS_REST_AUTH_VIEWS
+
 # Celery configuration
 # ====================
 
@@ -297,8 +313,8 @@ JSONSCHEMAS_HOST = "127.0.0.1:5000"
 # ====
 REST_ENABLE_CORS = True
 # change this only while developing
-CORS_SEND_WILDCARD = True
-CORS_SUPPORTS_CREDENTIALS = False
+CORS_SEND_WILDCARD = False
+CORS_SUPPORTS_CREDENTIALS = True
 
 # Flask configuration
 # ===================

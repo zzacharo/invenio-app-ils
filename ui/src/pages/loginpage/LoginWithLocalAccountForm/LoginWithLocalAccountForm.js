@@ -35,7 +35,7 @@ export class LoginWithLocalAccountForm extends Component {
         values
       );
 
-      this.onSubmitSuccess(response);
+      this.onSuccess(response);
     } catch (error) {
       const errors = getIn(error, 'response.data.errors', []);
 
@@ -59,7 +59,7 @@ export class LoginWithLocalAccountForm extends Component {
     }
   };
 
-  onSubmitSuccess = response => {
+  onSuccess = response => {
     this.props.onLocalAccountLoginSucess();
   };
 

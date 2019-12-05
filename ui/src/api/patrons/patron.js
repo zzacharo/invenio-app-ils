@@ -7,6 +7,8 @@ const listUrl = '/patrons/';
 // but not stored in the database. Instead we are using
 // `invenio_accounts_rest` users endpoint to retrieve
 // individual patron's information.
+
+// TODO: fix this
 const detailsUrl = '/users/';
 
 const get = patronPid => {
