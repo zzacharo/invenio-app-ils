@@ -25,7 +25,6 @@ import {
   SearchEmptyResults,
   SearchAggregationsCards,
 } from '@components/SearchControls/components/';
-import history from '@history';
 
 class OrderResponseSerializer {
   serialize(results) {
@@ -94,7 +93,7 @@ export class OrderSearch extends Component {
     return (
       <>
         <Header as="h2">Purchase Orders</Header>
-        <ReactSearchKit searchApi={this.searchApi} history={history}>
+        <ReactSearchKit searchApi={this.searchApi}>
           <Container fluid className="spaced">
             <SearchBar renderElement={this.renderSearchBar} />
           </Container>

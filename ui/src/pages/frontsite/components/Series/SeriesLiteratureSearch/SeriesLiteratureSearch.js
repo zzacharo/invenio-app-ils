@@ -20,7 +20,6 @@ import {
   SearchEmptyResults,
   SearchControls,
 } from '@components/SearchControls';
-import history from '@history';
 import { SeriesLiteratureResultsList } from './SeriesLiteratureResultsList';
 import { SeriesLiteratureSearchMobile } from './SeriesLiteratureSearchMobile';
 import { SearchControlsMobile } from '@components/SearchControls/SearchControlsMobile';
@@ -59,7 +58,7 @@ export class SeriesLiteratureSearch extends React.Component {
     return (
       <>
         <Divider horizontal>Literature in this series</Divider>
-        <ReactSearchKit searchApi={api} history={history}>
+        <ReactSearchKit searchApi={api}>
           <Container className="series-details-search-container">
             <SearchBar renderElement={this.renderSearchBar} />
           </Container>

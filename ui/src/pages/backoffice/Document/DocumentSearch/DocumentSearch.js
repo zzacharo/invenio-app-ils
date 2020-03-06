@@ -26,7 +26,6 @@ import {
   SearchFooter,
   SearchEmptyResults,
 } from '@components/SearchControls/components/';
-import history from '@history';
 
 export class DocumentSearch extends Component {
   searchApi = new InvenioSearchApi({
@@ -80,7 +79,7 @@ export class DocumentSearch extends Component {
     return (
       <>
         <Header as="h2">Documents</Header>
-        <ReactSearchKit searchApi={this.searchApi} history={history}>
+        <ReactSearchKit searchApi={this.searchApi} eventListenerEnabled={true}>
           <Container fluid className="spaced">
             <SearchBar renderElement={this.renderSearchBar} />
           </Container>

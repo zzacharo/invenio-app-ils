@@ -22,7 +22,6 @@ import {
   SearchFooter,
   SearchEmptyResults,
 } from '@components/SearchControls/components/';
-import history from '@history';
 import { LibraryListEntry } from './components/LibraryListEntry';
 
 export class LibrarySearch extends Component {
@@ -64,7 +63,7 @@ export class LibrarySearch extends Component {
 
   render() {
     return (
-      <ReactSearchKit searchApi={this.searchApi} history={history}>
+      <ReactSearchKit searchApi={this.searchApi}>
         <Container fluid className="spaced">
           <SearchBar renderElement={this.renderSearchBar} />
         </Container>

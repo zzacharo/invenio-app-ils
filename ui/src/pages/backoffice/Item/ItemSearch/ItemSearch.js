@@ -15,7 +15,6 @@ import { ExportReactSearchKitResults, NewButton } from '../../components';
 import { BackOfficeRoutes } from '@routes/urls';
 import { ItemListEntry } from './components';
 import { SearchControls } from '@components/SearchControls';
-import history from '@history';
 import { responseRejectInterceptor } from '@api/base';
 import {
   SearchEmptyResults,
@@ -89,7 +88,7 @@ export class ItemSearch extends Component {
     return (
       <>
         <Header as="h2">Physical copies</Header>
-        <ReactSearchKit searchApi={this.searchApi} history={history}>
+        <ReactSearchKit searchApi={this.searchApi}>
           <Container fluid className="spaced">
             <SearchBar renderElement={this.renderSearchBar} />
           </Container>

@@ -24,7 +24,6 @@ import { responseRejectInterceptor } from '@api/base';
 import { ExportReactSearchKitResults } from '../../components';
 import { NewButton } from '../../components/buttons';
 import { BackOfficeRoutes } from '@routes/urls';
-import history from '@history';
 
 export class EItemSearch extends Component {
   searchApi = new InvenioSearchApi({
@@ -101,7 +100,7 @@ export class EItemSearch extends Component {
       <>
         <Header as="h2">Electronic items</Header>
 
-        <ReactSearchKit searchApi={this.searchApi} history={history}>
+        <ReactSearchKit searchApi={this.searchApi}>
           <Container fluid className="spaced">
             <SearchBar renderElement={this.renderSearchBar} />
           </Container>

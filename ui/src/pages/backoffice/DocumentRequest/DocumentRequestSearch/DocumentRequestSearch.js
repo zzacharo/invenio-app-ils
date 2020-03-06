@@ -24,7 +24,6 @@ import { documentRequest as documentRequestApi } from '@api/documentRequests/doc
 import { getSearchConfig } from '@config';
 import { ExportReactSearchKitResults } from '@pages/backoffice/components';
 import { BackOfficeRoutes } from '@routes/urls';
-import history from '@history';
 import { responseRejectInterceptor } from '@api/base';
 
 export class DocumentRequestSearch extends Component {
@@ -86,7 +85,7 @@ export class DocumentRequestSearch extends Component {
       <>
         <Header as="h2">Literature requests</Header>
 
-        <ReactSearchKit searchApi={this.searchApi} history={history}>
+        <ReactSearchKit searchApi={this.searchApi}>
           <Container fluid className="spaced">
             <SearchBar renderElement={this.renderSearchBar} />
           </Container>

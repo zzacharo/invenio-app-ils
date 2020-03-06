@@ -27,7 +27,6 @@ import { getSearchConfig } from '@config';
 import { ExportReactSearchKitResults } from '../../components';
 import { NewButton } from '../../components/buttons';
 import { BackOfficeRoutes } from '@routes/urls';
-import history from '@history';
 
 export class SeriesSearch extends Component {
   searchApi = new InvenioSearchApi({
@@ -105,7 +104,7 @@ export class SeriesSearch extends Component {
     return (
       <>
         <Header as="h2">Series</Header>
-        <ReactSearchKit searchApi={this.searchApi} history={history}>
+        <ReactSearchKit searchApi={this.searchApi}>
           <Container fluid className="spaced">
             <SearchBar renderElement={this.renderSearchBar} />
           </Container>

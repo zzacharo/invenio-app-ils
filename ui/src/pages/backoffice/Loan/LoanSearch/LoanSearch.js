@@ -14,7 +14,6 @@ import { Error as IlsError, SearchBar as LoansSearchBar } from '@components';
 import { NewButton } from '../../components';
 import { loan as loanApi } from '@api/loans/loan';
 import { BackOfficeRoutes } from '@routes/urls';
-import history from '@history';
 import LoanList from './LoanList';
 import {
   SearchControls,
@@ -77,7 +76,7 @@ export class LoanSearch extends Component {
       <>
         <Header as="h2">Loans and requests</Header>
 
-        <ReactSearchKit searchApi={this.searchApi} history={history}>
+        <ReactSearchKit searchApi={this.searchApi}>
           <Container fluid className="spaced">
             <SearchBar renderElement={this.renderSearchBar} />
           </Container>

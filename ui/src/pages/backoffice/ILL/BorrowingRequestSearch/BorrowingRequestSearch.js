@@ -24,7 +24,6 @@ import {
   SearchEmptyResults,
 } from '@components/SearchControls/components/';
 import { ILLRoutes } from '@routes/urls';
-import history from '@history';
 import { BorrowingRequestListEntry } from './components';
 
 export class BorrowingRequestSearch extends Component {
@@ -73,7 +72,7 @@ export class BorrowingRequestSearch extends Component {
 
   render() {
     return (
-      <ReactSearchKit searchApi={this.searchApi} history={history}>
+      <ReactSearchKit searchApi={this.searchApi}>
         <Container fluid className="spaced">
           <SearchBar renderElement={this.renderSearchBar} />
         </Container>
